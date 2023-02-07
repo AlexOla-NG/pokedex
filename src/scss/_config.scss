@@ -9,18 +9,18 @@
 }
 
 
-// STUB: function toggles color based on lightness
-@function set-text-color($color) {
-  @if (lightness($color) > 40%) {
-    @return #000;
-  }
+// // STUB: function toggles color based on lightness
+// @function set-text-color($color) {
+//   @if (lightness($color) > 40%) {
+//     @return #000;
+//   }
 
-  @else {
-    @return #fff;
-  }
-}
+//   @else {
+//     @return #fff;
+//   }
+// }
 
-// STUB: create mixin returns responsive font size
+// STUB: create mixin that returns responsive font size
 @mixin resize($size-name) {
   $result: map-get($font-sizes, $size-name);
   font-size: $result;
@@ -31,14 +31,14 @@
   }
 }
 
-// STUB: create transition mixin
-@mixin transition-ease {
-  transition: all 0.3s ease-in-out;
-}
+// // STUB: create transition mixin
+// @mixin transition-ease {
+//   transition: all 0.3s ease-in-out;
+// }
 
-@mixin transition-ease-fast {
-  transition: all 0.225s ease-in-out;
-}
+// @mixin transition-ease-fast {
+//   transition: all 0.225s ease-in-out;
+// }
 
 // STUB: create flex mixin
 @mixin flex-center-between {

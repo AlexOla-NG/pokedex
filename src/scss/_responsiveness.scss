@@ -28,7 +28,7 @@
         }
 
         &__link {
-          color: $text-color;
+          // color: $text-color;
           @include resize(fs-body1);
           padding: 1rem;
         }

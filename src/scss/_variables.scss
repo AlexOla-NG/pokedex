@@ -1,17 +1,20 @@
 // STUB: font
-@import url('https://fonts.googleapis.com/css2?family=Marhey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // STUB: colors
-$primary-color: hsl(0, 0%, 7%);
+$primary-color: #A6131E;
 $secondary-color: hsl(0, 0%, 98%);
-$text-color: hsl(0, 0%, 20%);
-$accent-color: hsl(52, 95%, 50%);
+$text-title-color: #e2e2e2;
+$text-body-color: #8a8a8a;
+$header-color: #cf2835;
+$background-color: #F8F5F9;
+
 
 // STUB: border radius
 $border-radii: (
-  'regular': 0.7rem,
-  'medium': 1rem,
+  'regular': 0.125rem,
+  'small': 0.063rem,
   'circle': 50%
 );
 
@@ -20,19 +23,13 @@ $font-sizes: (
   'fs-h1': 3rem,
   'fs-h2': 2.2rem,
   'fs-h3': 1.5rem,
-  'fs-h4': 2.2rem,
-  'fs-h5': 1.3rem,
-  'fs-navlink': 2rem,
-  'fs-projbtn': 0.8rem,
-  'fs-btn': 0.9rem,
   'fs-p': 1.1rem,
-  'fs-body1': 1rem,
-  'fs-caption': 0.7rem,
+
 );
 
 // STUB: font weight
 $font-weights: (
-  'regular': 400,
-  'medium': 700,
-  'bold': 800,
+  // 'regular': 400,
+  // 'medium': 700,
+  'bold': bold,
 );

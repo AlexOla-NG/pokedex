@@ -64,4 +64,4 @@ I had some challenge with the animation & transition effects. I originally inten
 
 ## Acknowledgments
 
-Biiiiiig shoutout goes to Ram Maheshwari (https://www.rammaheshwari.com/). His site served as inspo for my work. It was neat, and straightforward...just the way I like it.
+Design inspo from Alexandre dos Santos's codepen (https://codepen.io/alexandrejuk/pen/bKjvXx).
