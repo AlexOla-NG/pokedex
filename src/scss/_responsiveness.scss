@@ -1,0 +1,92 @@
+@include media-md {
+
+  section {
+    padding: 6rem 6rem !important;
+  }
+
+  header {
+    .menu-btn {
+      visibility: hidden;
+    }
+
+    .nav {
+      visibility: visible;
+
+      .menu-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        transform: translateY(0);
+        height: 100%;
+        background: transparent;
+        padding: 0 2rem;
+
+        &__item {
+          display: inline;
+          padding-right: 1.5rem;
+          transform: translateX(0);
+        }
+
+        &__link {
+          color: $text-color;
+          @include resize(fs-body1);
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
+  .contact-section-wrapper {
+    form>.container {
+      .col-md-6 {
+        grid-column: span 6;
+      }
+
+      .styled-input {
+        width: 100%;
+      }
+
+      .form-btn {
+        max-width: 20rem;
+      }
+
+      .btn-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+  }
+}
+
+@include media-lg {
+  header {
+    padding: 1rem 6rem !important;
+  }
+
+  .projects-section-wrapper {
+    .single-project-wrapper {
+      &>div:first-of-type {
+        max-width: 30.75rem;
+      }
+    }
+  }
+
+  .overlay-wrapper:hover .title-overlay {
+    padding: 2rem 0;
+  }
+}
+
+@include media-xxl {
+  .projects-section-wrapper {
+    .single-project-wrapper {
+      &>div:first-of-type {
+        max-width: 60rem;
+      }
+    }
+  }
+
+  .overlay-wrapper:hover .title-overlay {
+    padding: 6rem 0;
+  }
+}

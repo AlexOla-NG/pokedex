@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Marhey&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 6rem 6rem !important;
+  }
+  header .menu-btn {
+    visibility: hidden;
+  }
+  header .nav {
+    visibility: visible;
+  }
+  header .nav .menu-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    padding: 0 2rem;
+  }
+  header .nav .menu-nav__item {
+    display: inline;
+    padding-right: 1.5rem;
+    transform: translateX(0);
+  }
+  header .nav .menu-nav__link {
+    color: hsl(0deg, 0%, 20%);
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 2560px) {
+  header .nav .menu-nav__link {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact-section-wrapper form > .container .col-md-6 {
+    grid-column: span 6;
+  }
+  .contact-section-wrapper form > .container .styled-input {
+    width: 100%;
+  }
+  .contact-section-wrapper form > .container .form-btn {
+    max-width: 20rem;
+  }
+  .contact-section-wrapper form > .container .btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 1rem 6rem !important;
+  }
+  .projects-section-wrapper .single-project-wrapper > div:first-of-type {
+    max-width: 30.75rem;
+  }
+  .overlay-wrapper:hover .title-overlay {
+    padding: 2rem 0;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .projects-section-wrapper .single-project-wrapper > div:first-of-type {
+    max-width: 60rem;
+  }
+  .overlay-wrapper:hover .title-overlay {
+    padding: 6rem 0;
+  }
+}
+body {
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  color: hsl(0deg, 0%, 20%);
+  overflow-x: hidden;
+}
+
+a {
+  color: hsl(0deg, 0%, 20%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0deg, 0%, 7%);
+  font-family: "Marhey", cursive;
+  text-transform: uppercase;
+}/*# sourceMappingURL=main.css.map */
