@@ -6,6 +6,7 @@ const SearchBtn = () => {
       className="button-search"
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 500 }}
+      form="form"
     >
       <div className="button-content">
         Search

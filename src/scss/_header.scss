@@ -1,16 +1,7 @@
 .content-header {
   background: $header-color;
   min-height: 12.5rem;
-  padding: 1rem 0;
-
-  .logo {
-    max-width: 12.5rem;
-    margin: 0 auto;
-
-    img {
-      max-width: 100%;
-    }
-  }
+  padding: 2rem 0 1rem;
 
   .searchPokemon {
     max-width: 37.5rem;

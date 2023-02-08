@@ -1,3 +1,9 @@
-header {
-  background-color: $header-color;
+main {
+  margin-top: -1rem;
+
+  .random-pokemon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
 }

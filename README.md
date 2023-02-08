@@ -43,9 +43,9 @@ I had some challenge with the animation & transition effects. I originally inten
 
 ### Useful resources
 
-- [You can do that with one line of HTML?!](https://www.youtube.com/watch?v=Dr-dVbzZDf0&list=PLxBSSAEDXQzbKW6BUstg_qQ-SoFH8vOw_&index=31) - This video helped me pick the best hamburger design for my project. I really liked the options in the video. I might use some as inspo in the future.
-- [Hamburger Menu - Base File](https://codepen.io/Homunculus84/pen/gOOqmvY) - This is the codepen link to the hamburger menu design. I really liked this pattern and will use it going forward.
-- [Best way to translate an element off-screen?](https://stackoverflow.com/a/73366968) - This helped us fix an issue with the hamburger. The menu list was displaying offscreen. However, setting the position to 'fixed' from 'absolute' solved the problem . I really liked this pattern and will use it going forward.
+- [FontAwesome Search](https://fontawesome.com/search) - This is the search page for font awesome icons.
+- [How to use setState callback on react hooks](https://stackoverflow.com/a/61612292) - This showed how to use a state value immediately after calling setState. I really liked this pattern and will use it going forward.
+- [Suppress Chrome 'Failed to load resource' messages in console](https://stackoverflow.com/questions/4500741/suppress-chrome-failed-to-load-resource-messages-in-console/30847631#30847631) - This helped to clear the console when error messages were logged after a 404 request. I really liked this pattern and will use it going forward.
 - [ikr7/random-emoji.js](https://gist.github.com/ikr7/c72843556ef3a12014c3) - This helped us create a function that returns random emojis. I really liked this pattern and will use it going forward.
 - [scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior) - This helped me create an automatic scrolling behavior when navigating between anchor tags. I really liked this pattern and will use it going forward.
 - [Contact Us Form - frontend](https://codepen.io/JonLehman/pen/yOdbOG) - This offered me inspiration for the contact form design. I really liked this pattern and will use it going forward.
