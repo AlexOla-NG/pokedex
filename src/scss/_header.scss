@@ -1,0 +1,53 @@
+.content-header {
+  background: $header-color;
+  min-height: 12.5rem;
+  padding: 1rem 0;
+
+  .logo {
+    max-width: 12.5rem;
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .searchPokemon {
+    max-width: 37.5rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    input {
+      background: transparent;
+      border: none;
+      padding: 1rem;
+      border-bottom: solid 2px $primary-color;
+      @include resize(fs-p);
+      color: $white-color;
+      width: 60%;
+      transition: all 1s ease;
+      right: 0;
+      font-weight: weight(bold);
+    }
+
+    input::placeholder {
+      color: hsl(356, 100%, 25%);
+      font-weight: weight(bold);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: $white-color;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem auto 0;
+    }
+  }
+
+
+}

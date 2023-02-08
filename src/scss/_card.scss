@@ -1,55 +1,54 @@
 .pokemon {
-  // font-family: 'Cantarell', sans-serif;
-  font-weight: bold;
-  color: #A6131E;
+  font-weight: weight(bold);
+  color: $primary-color;
   display: flex;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  width: 30%;
+  gap: 0.5rem;
+  background: $white-color;
+  border: 1px solid $text-title-color;
   height: 168px;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  border-radius: radius(regular);
   cursor: pointer;
-  min-width: 450px;
-  max-width: 450px;
+  max-width: 20rem;
 
   img {
-    width: 150px;
-    height: 150px
+    width: 9.375rem;
+    height: auto
   }
 
   .pokemon-details {
-    margin-left: 10px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
-    .species-title {
-      color: #8a8a8a;
-    }
-
-    .species {
-      display: flex;
-      justify-content: space-around;
-      font-size: 1.4em;
-
-      svg {
-        color: #e2e2e2;
-        font-size: 1rem;
-
+    .species-header {
+      h2 {
+        @include resize(fs-h2);
       }
 
+      h3 {
+        @include resize(fs-h3);
+      }
+
+      .species-title {
+        color: $text-body-color;
+      }
+    }
+
+
+    .species {
+      color: $text-title-color;
+      display: flex;
+      gap: 1rem;
+      @include resize(fs-icon);
+
       .active {
-        color: #A6131E;
+        color: $primary-color;
       }
     }
   }
 }
 
 .pokemon:hover {
-  border-color: #A6131E;
-}
-
-.pokemon img {
-  width: 150px;
-  height: 150px
+  border-color: $primary-color;
 }

@@ -10,117 +10,179 @@
 
 .pokemon {
   font-weight: bold;
-  color: #A6131E;
+  color: hsl(356deg, 79%, 36%);
   display: flex;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  width: 30%;
+  gap: 0.5rem;
+  background: hsl(0deg, 0%, 100%);
+  border: 1px solid hsl(0deg, 0%, 89%);
   height: 168px;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.125rem;
   cursor: pointer;
-  min-width: 450px;
-  max-width: 450px;
+  max-width: 20rem;
 }
 .pokemon img {
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: auto;
 }
 .pokemon .pokemon-details {
-  margin-left: 10px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.pokemon .pokemon-details .species-title {
-  color: #8a8a8a;
+.pokemon .pokemon-details .species-header h2 {
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 2560px) {
+  .pokemon .pokemon-details .species-header h2 {
+    font-size: 2rem;
+  }
+}
+.pokemon .pokemon-details .species-header h3 {
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 2560px) {
+  .pokemon .pokemon-details .species-header h3 {
+    font-size: 1.8rem;
+  }
+}
+.pokemon .pokemon-details .species-header .species-title {
+  color: hsl(0deg, 0%, 54%);
 }
 .pokemon .pokemon-details .species {
+  color: hsl(0deg, 0%, 89%);
   display: flex;
-  justify-content: space-around;
-  font-size: 1.4em;
+  gap: 1rem;
+  font-size: 1.2rem;
 }
-.pokemon .pokemon-details .species svg {
-  color: #e2e2e2;
-  font-size: 1rem;
+@media only screen and (min-width: 2560px) {
+  .pokemon .pokemon-details .species {
+    font-size: 1.7rem;
+  }
 }
 .pokemon .pokemon-details .species .active {
-  color: #A6131E;
+  color: hsl(356deg, 79%, 36%);
 }
 
 .pokemon:hover {
-  border-color: #A6131E;
+  border-color: hsl(356deg, 79%, 36%);
 }
 
-.pokemon img {
-  width: 150px;
-  height: 150px;
+.button-search {
+  background: hsl(0deg, 0%, 100%);
+  border: 2px solid hsl(356deg, 79%, 36%);
+  border-radius: 1.313rem;
+  box-shadow: 0 0 0 3px hsl(0deg, 0%, 100%);
+  color: hsl(356deg, 79%, 36%);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.25rem;
+  transition: 0.6s;
+  width: 8.125rem;
+}
+.button-search .button-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9rem;
+}
+@media only screen and (min-width: 2560px) {
+  .button-search .button-content {
+    font-size: 1.4rem;
+  }
+}
+.button-search .button-content img {
+  width: 1.25rem;
+  height: auto;
+}
+
+.button-search:focus {
+  outline: none;
+}
+
+.button-search:active {
+  transform: scale(1.1);
+}
+
+.content-header {
+  background: hsl(355deg, 68%, 48%);
+  min-height: 12.5rem;
+  padding: 1rem 0;
+}
+.content-header .logo {
+  max-width: 12.5rem;
+  margin: 0 auto;
+}
+.content-header .logo img {
+  max-width: 100%;
+}
+.content-header .searchPokemon {
+  max-width: 37.5rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+.content-header .searchPokemon input {
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  border-bottom: solid 2px hsl(356deg, 79%, 36%);
+  font-size: 1.1rem;
+  color: hsl(0deg, 0%, 100%);
+  width: 60%;
+  transition: all 1s ease;
+  right: 0;
+  font-weight: bold;
+}
+@media only screen and (min-width: 2560px) {
+  .content-header .searchPokemon input {
+    font-size: 1.6rem;
+  }
+}
+.content-header .searchPokemon input::-moz-placeholder {
+  color: hsl(356deg, 100%, 25%);
+  font-weight: bold;
+}
+.content-header .searchPokemon input::placeholder {
+  color: hsl(356deg, 100%, 25%);
+  font-weight: bold;
+}
+.content-header .searchPokemon input:focus {
+  outline: none;
+  border-color: hsl(0deg, 0%, 100%);
+}
+.content-header .searchPokemon .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto 0;
 }
 
 @media screen and (min-width: 768px) {
-  section {
-    padding: 6rem 6rem !important;
-  }
-  header .menu-btn {
-    visibility: hidden;
-  }
-  header .nav {
-    visibility: visible;
-  }
-  header .nav .menu-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    transform: translateY(0);
-    height: 100%;
-    background: transparent;
-    padding: 0 2rem;
-  }
-  header .nav .menu-nav__item {
-    display: inline;
-    padding-right: 1.5rem;
-    transform: translateX(0);
-  }
-  header .nav .menu-nav__link {
+  .pokemon {
     padding: 1rem;
-  }
-}
-@media only screen and (min-width: 768px) and (min-width: 2560px) {
-  header .nav .menu-nav__link {
-    font-size: 1;
-  }
-}
-@media screen and (min-width: 768px) {
-  .contact-section-wrapper form > .container .col-md-6 {
-    grid-column: span 6;
-  }
-  .contact-section-wrapper form > .container .styled-input {
-    width: 100%;
-  }
-  .contact-section-wrapper form > .container .form-btn {
-    max-width: 20rem;
-  }
-  .contact-section-wrapper form > .container .btn-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  header {
-    padding: 1rem 6rem !important;
-  }
-  .projects-section-wrapper .single-project-wrapper > div:first-of-type {
-    max-width: 30.75rem;
-  }
-  .overlay-wrapper:hover .title-overlay {
-    padding: 2rem 0;
+    gap: 1rem;
   }
 }
 @media screen and (min-width: 2560px) {
-  .projects-section-wrapper .single-project-wrapper > div:first-of-type {
-    max-width: 60rem;
+  .pokemon {
+    max-width: 22rem;
   }
-  .overlay-wrapper:hover .title-overlay {
-    padding: 6rem 0;
+  .pokemon-details {
+    gap: 1rem;
+    justify-content: normal;
+  }
+  .button-search {
+    padding: 0.5rem 1rem;
+    width: 10rem;
+  }
+  .button-search .button-content img {
+    width: 1.5rem;
+    height: auto;
+  }
+  .content-header .searchPokemon .btn-wrapper {
+    gap: 1.5rem;
+    margin: 1.5rem auto 0;
   }
 }
 body {
@@ -136,7 +198,11 @@ a {
 h1,
 h2,
 h3 {
-  color: #A6131E;
+  color: hsl(356deg, 79%, 36%);
   font-family: "Cantarell", sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.debug {
+  border: 1px solid red;
 }/*# sourceMappingURL=main.css.map */

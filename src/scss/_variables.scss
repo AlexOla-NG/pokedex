@@ -3,12 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // STUB: colors
-$primary-color: #A6131E;
+$primary-color: hsl(356, 79%, 36%);
 $secondary-color: hsl(0, 0%, 98%);
-$text-title-color: #e2e2e2;
-$text-body-color: #8a8a8a;
-$header-color: #cf2835;
-$background-color: #F8F5F9;
+$text-title-color: hsl(0, 0%, 89%);
+$text-body-color: hsl(0, 0%, 54%);
+$header-color: hsl(355, 68%, 48%);
+$background-color: hsl(285, 25%, 97%);
+$white-color: hsl(0, 0%, 100%);
 
 
 // STUB: border radius
@@ -21,10 +22,11 @@ $border-radii: (
 // STUB: font size
 $font-sizes: (
   'fs-h1': 3rem,
-  'fs-h2': 2.2rem,
-  'fs-h3': 1.5rem,
+  'fs-h2': 1.5rem,
+  'fs-h3': 1.3rem,
   'fs-p': 1.1rem,
-
+  'fs-icon': 1.2rem,
+  'fs-btn': 0.9rem,
 );
 
 // STUB: font weight

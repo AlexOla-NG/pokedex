@@ -7,9 +7,10 @@ import Error from "./views/Error";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path=":id" element={<PokemonDetails />} />
-      <Route path="my-team" element={<MyTeam />} />
+      <Route path="/" element={<Home />}>
+        <Route path=":id" element={<PokemonDetails />} />
+        <Route path="my-team" element={<MyTeam />} />
+      </Route>
       <Route path="*" element={<Error />} />
     </Routes>
   );

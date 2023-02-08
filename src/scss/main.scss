@@ -1,4 +1,4 @@
-@import 'resets', 'variables', 'config', 'card', 'responsiveness';
+@import 'resets', 'variables', 'config', 'card', 'button', 'header', 'responsiveness';
 
 
 body {
@@ -19,5 +19,9 @@ h2,
 h3 {
   color: $primary-color;
   font-family: 'Cantarell', sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.debug {
+  border: 1px solid red;
 }
