@@ -1,6 +1,12 @@
+import { motion } from "framer-motion";
+
 const SearchBtn = () => {
   return (
-    <button className="button-search">
+    <motion.button
+      className="button-search"
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 500 }}
+    >
       <div className="button-content">
         Search
         <img
@@ -9,7 +15,7 @@ const SearchBtn = () => {
           loading="lazy"
         />
       </div>
-    </button>
+    </motion.button>
   );
 };
 

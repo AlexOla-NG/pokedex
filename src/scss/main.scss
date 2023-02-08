@@ -1,16 +1,17 @@
-@import 'resets', 'variables', 'config', 'card', 'button', 'header', 'responsiveness';
+@import 'resets', 'variables', 'config', 'card', 'button', 'icon-text', 'navbar', 'header', 'paginate', 'home', 'responsiveness';
 
 
 body {
   font-family: 'VT323', monospace;
   font-size: 16px;
-  // color: $text-color;
+  color: $text-body-color;
   overflow-x: hidden;
 }
 
 
 a {
-  // color: $text-color;
+  color: $primary-color;
+  @include resize(fs-icon);
   text-decoration: none;
 }
 

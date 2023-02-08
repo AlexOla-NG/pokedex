@@ -47,6 +47,11 @@
   justify-content: space-between;
 }
 
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
 // STUB: create media-query mixin
 @mixin media-md {
   @media screen and (min-width: 768px) {

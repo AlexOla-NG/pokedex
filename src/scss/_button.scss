@@ -7,7 +7,6 @@
   cursor: pointer;
   font-weight: weight(bold);
   padding: 0.25rem;
-  transition: 0.6s;
   width: 8.125rem;
 
   .button-content {
@@ -26,8 +25,4 @@
 
 .button-search:focus {
   outline: none;
-}
-
-.button-search:active {
-  transform: scale(1.1);
 }

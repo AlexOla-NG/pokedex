@@ -1,0 +1,20 @@
+nav {
+  padding: 0.5rem 0;
+
+  .navbar-items {
+    color: $text-body-color;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0 0.5rem;
+    max-height: 100px;
+    overflow-y: auto;
+    justify-content: flex-end;
+
+    &-active {
+      color: $secondary-color;
+      display: flex;
+      transition: color 600ms ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.paginate {
+  @include flex-align-center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+
+  li {
+    border-radius: radius(regular);
+    @include resize(fs-icon);
+    padding: 0.3em 0.6em;
+    text-transform: capitalize;
+    transition: background-color 600ms ease-in-out;
+  }
+
+  .selected {
+    background-color: $primary-color;
+
+    a {
+      color: $white-color;
+    }
+  }
+}

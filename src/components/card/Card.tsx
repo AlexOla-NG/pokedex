@@ -14,9 +14,9 @@ const Card = () => {
   return (
     <motion.div
       className="pokemon"
-      whileHover={{ scale: 1.1 }}
+      // whileHover={{ scale: 0.9 }}
       whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      transition={{ type: "spring", stiffness: 500 }}
     >
       <img
         src="https://i.pinimg.com/originals/79/d9/7c/79d97cd68801eb29a4a5a33e208fb2ff.jpg"
