@@ -35,11 +35,11 @@ This is a frontend UI for displaying data from the pokeapi API (https://pokeapi.
 
 ### What I learned
 
-With this project, I learned how to source assets more effectively. I think my googling skills got levelled up at some point😁.
+With this project, I learnt how to prevent a useEffect from running on the first render.
 
 ### Continued development
 
-I had some challenge with the animation & transition effects. I originally intended to use Framer.Motion, but time was too short to get into that. Maybe it'll feature in my next portfolio.
+I had some challenge with getting the react-skeleton library to work properly. Maybe it'll feature in my next project.
 
 ### Useful resources
 
@@ -47,14 +47,7 @@ I had some challenge with the animation & transition effects. I originally inten
 - [How to use setState callback on react hooks](https://stackoverflow.com/a/61612292) - This showed how to use a state value immediately after calling setState. I really liked this pattern and will use it going forward.
 - [Suppress Chrome 'Failed to load resource' messages in console](https://stackoverflow.com/questions/4500741/suppress-chrome-failed-to-load-resource-messages-in-console/30847631#30847631) - This helped to clear the console when error messages were logged after a 404 request. I really liked this pattern and will use it going forward.
 - [FontAwesome Icons Spin only on mouseover?](https://stackoverflow.com/questions/21030259/fontawesome-icons-spin-only-on-mouseover) - This helped us add font awesome animation via css to font awesome icons. I really liked this pattern and will use it going forward.
-- [scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior) - This helped me create an automatic scrolling behavior when navigating between anchor tags. I really liked this pattern and will use it going forward.
-- [Contact Us Form - frontend](https://codepen.io/JonLehman/pen/yOdbOG) - This offered me inspiration for the contact form design. I really liked this pattern and will use it going forward.
-- [:valid](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid) - This is the documentation for the valid pseudo-class. It is used to apply styles to form element that validate successfully . I really liked this pattern and will use it going forward.
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) - This is the documentation for the general sibling combinator. It is used to match all iterations of the second element . I really liked this pattern and will use it going forward.
-- [Link not clickable because ::Before and ::After [duplicate]](https://stackoverflow.com/a/49487195) - This helped me make anchor elements nested in pseudo-elements clickable. I really liked this pattern and will use it going forward.
-- [Sass Tutorial for Beginners - CSS With Superpowers](https://youtu.be/_a5j7KoflTs) - This tutorial introduced me to SCSS. I really liked the way the instructor broke down the concepts.
-- [Image Overlay by hosam](https://codepen.io/hdoma1/pen/xxZRqNE?editors=1100) - This codepen template helped me add overlay effects to each project onhover. I really liked the samples provided in the codepen.
-- [Using @mixin or @function to change font sizes based on screen size](https://stackoverflow.com/questions/64428683/using-mixin-or-function-to-change-font-sizes-based-on-screen-size) - This helped me understand how to use a scss mixin to set font size responsively. I really liked this pattern and will use it going forward.
+- [The Simplest Guide to Using Async/Await with forEach() in JavaScript (with Examples)](https://plainenglish.io/blog/async-await-foreach) - This showed me alternatives to using forEach with async/await. I really liked this pattern and will use it going forward.
 
 ## Author
 

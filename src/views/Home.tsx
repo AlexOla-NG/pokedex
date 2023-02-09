@@ -15,7 +15,8 @@ const Home = ({ myTeam }: IMyTeam) => {
 
   const isFirstRender = useRef(true);
 
-  // STUB: this useffect will not run on first render, only when searchInput state has been updated
+  // STUB: this useffect will not run on first render,
+  // it'll only run when searchInput state has been updated
   useEffect(() => {
     // STUB: return pokemon using searchInput
     const getSearchPokemon = async () => {
@@ -75,13 +76,7 @@ const Home = ({ myTeam }: IMyTeam) => {
       {isLoading && <div>Loading...</div>}
       {pokemon && (
         <div className="random-pokemon-wrapper">
-          <Card
-            id={pokemon?.id}
-            name={pokemon?.name}
-            type={pokemon?.type}
-            sprite_url={pokemon?.sprite_url}
-            isOnTeam={pokemon?.isOnTeam}
-          />
+          <Card {...pokemon} />
         </div>
       )}
     </main>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserMinus,
@@ -23,9 +22,17 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
   useEffect(() => {
     // STUB: get pokemon details
     const getPokemonDetails = async () => {
+      let urlID;
       try {
         setIsLoading(true);
-        let response = await axios.get(`${API_URL}${id}`);
+
+        // STUB: sanity check
+        if (pokemon !== undefined) {
+          urlID = pokemon.id;
+        } else {
+          urlID = id;
+        }
+        let response = await axios.get(`${API_URL}${urlID}`);
         let data = await response.data;
         setIsLoading(false);
         setPokemon({
@@ -57,12 +64,8 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
   // STUB: add/remove pokemon from my team, toggle isOnTeam
   // if team is full, display alert
   const handleClick = () => {
-    if (myTeam.length < 6) {
-      handleToggleTeam(pokemon?.id);
-      setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
-    } else {
-      alert("Team is full. Can't add anymore, boss😅😅😅");
-    }
+    handleToggleTeam(pokemon?.id);
+    setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
   };
 
   return (
@@ -76,13 +79,13 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
           <div className="container">
             <div className="card">
               <div className="card-img">
-                {(
+                {
                   <img
                     src={pokemon.sprite_url}
                     alt={pokemon.name}
                     loading="lazy"
                   />
-                ) || <Skeleton />}
+                }
               </div>
               <div className="card-dis">
                 <div className="action-btns">
@@ -91,11 +94,15 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
                     onClick={handleReturn}
                   />
                   <FontAwesomeIcon
-                    icon={pokemon.isOnTeam ? faUserMinus : faUserPlus}
+                    icon={
+                      pokemon.isOnTeam || myTeam.length === 6
+                        ? faUserMinus
+                        : faUserPlus
+                    }
                     onClick={handleClick}
                   />
                 </div>
-                <h1>{pokemon.name || <Skeleton />}</h1>
+                <h1>{pokemon.name}</h1>
                 <ul>
                   <li>
                     Type:{" "}
@@ -104,13 +111,11 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
                       const { slot, type } = item;
                       const { name } = type;
                       return (
-                        (
-                          <FontAwesomeIcon
-                            key={slot}
-                            icon={myIcons[name]}
-                            className="active"
-                          />
-                        ) || <Skeleton />
+                        <FontAwesomeIcon
+                          key={slot}
+                          icon={myIcons[name]}
+                          className="active"
+                        />
                       );
                     })}
                   </li>
@@ -119,13 +124,13 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
                     {pokemon.abilities?.map((item, i) => {
                       const { ability } = item;
                       const { name } = ability;
-                      return <p key={i}>{name}</p> || <Skeleton />;
+                      return <p key={i}>{name}</p>;
                     })}
                   </li>
-                  <li>Weight: {pokemon.weight || <Skeleton />}hg</li>
-                  <li>Height: {pokemon.height || <Skeleton />}dm</li>
+                  <li>Weight: {pokemon.weight}hg</li>
+                  <li>Height: {pokemon.height}dm</li>
                   <li>
-                    Base Experience: {pokemon.base_experience || <Skeleton />}
+                    Base Experience: {pokemon.base_experience || `???`}
                     EXP
                   </li>
                 </ul>

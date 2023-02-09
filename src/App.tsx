@@ -1,29 +1,46 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
 import MyTeam from "./views/MyTeam";
 import PokemonDetails from "./views/PokemonDetails";
-import Error from "./views/Error";
 import Navbar from "./components/navigation/Navbar";
-
-// TODO: stopped here
-// refactor handleToggleTeam...rename to handleToggleTeam
-// add functionality to remove pokemon
 
 // STUB: max number of pokemons allowed in a team
 const MAX_TEAM_NUM = 6;
 
 const App = () => {
-  const [myTeam, setMyTeam] = useState<number[]>([]);
+  const [myTeam, setMyTeam] = useState<number[]>(
+    JSON.parse(localStorage.getItem("my_team") as string)
+  );
+
+  const isFirstRender = useRef(true);
+
+  // STUB: update localstorage whenever myTeam state value changes
+  // this useeffect won't run on first render
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false; // toggle flag after first render/mounting
+      return;
+    }
+    saveToLocalStorage(); // do something after state has updated
+  }, [myTeam]);
 
   // STUB: add pokemon id to my team if id not found in my team & if max team num has not been reached
   // if id is in my team, remove pokemon id
+  // if team is full, alert user
   const handleToggleTeam = (id: number) => {
-    if (!myTeam.includes(id) && myTeam.length < MAX_TEAM_NUM)
+    if (!myTeam.includes(id) && myTeam.length < MAX_TEAM_NUM) {
       setMyTeam([...myTeam, id]);
+    }
 
-    if (myTeam.includes(id))
+    if (myTeam.includes(id)) {
       setMyTeam((myTeam) => myTeam.filter((el) => el !== id));
+    }
+  };
+
+  // STUB: create function to save my team to localStorage
+  const saveToLocalStorage = () => {
+    localStorage.setItem("my_team", JSON.stringify(myTeam));
   };
 
   return (
@@ -49,7 +66,6 @@ const App = () => {
             <MyTeam myTeam={myTeam} handleToggleTeam={handleToggleTeam} />
           }
         />
-        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );

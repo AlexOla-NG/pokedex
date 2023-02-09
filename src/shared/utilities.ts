@@ -8,7 +8,6 @@ import {
   faDragon,
   faWandMagicSparkles,
   faDumbbell,
-  faJetFighter,
   faGhost,
   faIcicles,
   faBrain,
@@ -17,6 +16,7 @@ import {
   faPaw,
   faShield,
   faWater,
+  faFeather,
 } from "@fortawesome/free-solid-svg-icons";
 
 // STUB: reference all icon values from font awesome before babel macro build step
@@ -28,7 +28,7 @@ const myIcons = {
   fairy: faWandMagicSparkles,
   fighting: faDumbbell,
   fire: faFire,
-  flying: faJetFighter,
+  flying: faFeather,
   ghost: faGhost,
   grass: faLeaf,
   ground: faHouseCrack,
