@@ -64,4 +64,4 @@ I had some challenge with the animation & transition effects. I originally inten
 
 ## Acknowledgments
 
-Design inspo from Alexandre dos Santos's codepen (https://codepen.io/alexandrejuk/pen/bKjvXx).
+Design inspo from Alexandre dos Santos's (https://codepen.io/alexandrejuk/pen/bKjvXx) & haiderali9-9's (https://codepen.io/haiderali9-9/pen/mdpNVrr) codepen.

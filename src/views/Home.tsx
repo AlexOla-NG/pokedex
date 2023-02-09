@@ -15,6 +15,27 @@ const Home = () => {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
+    // STUB: return pokemon using searchInput
+    const getSearchPokemon = async () => {
+      try {
+        setIsLoading(true);
+        let response = await axios.get(`${API_URL}${searchInput}`);
+        let data = await response.data;
+        setIsLoading(false);
+        setPokemon({
+          id: data.id,
+          name: data.name,
+          type: data.types,
+          sprite_url: `${data.sprites.other["official-artwork"].front_default}`,
+          isOnTeam: false,
+        });
+      } catch (error) {
+        console.clear();
+        setIsLoading(false);
+        alert(error);
+      }
+    };
+
     // STUB: do something after state has updated
     if (isFirstRender.current) {
       isFirstRender.current = false; // toggle flag after first render/mounting
@@ -33,30 +54,9 @@ const Home = () => {
       id: data.id,
       name: data.name,
       type: data.types,
-      sprite_url: data.sprites.front_default,
+      sprite_url: `${data.sprites.other["official-artwork"].front_default}`,
       isOnTeam: false,
     });
-  };
-
-  // STUB: return pokemon using searchInput
-  const getSearchPokemon = async () => {
-    try {
-      setIsLoading(true);
-      let response = await axios.get(`${API_URL}${searchInput}`);
-      let data = await response.data;
-      setIsLoading(false);
-      setPokemon({
-        id: data.id,
-        name: data.name,
-        type: data.types,
-        sprite_url: data.sprites.front_default,
-        isOnTeam: false,
-      });
-    } catch (error) {
-      console.clear();
-      setIsLoading(false);
-      alert(error);
-    }
   };
 
   // STUB: set searchInput
@@ -74,6 +74,7 @@ const Home = () => {
       {pokemon && (
         <div className="random-pokemon-wrapper">
           <Card
+            id={pokemon?.id}
             name={pokemon?.name}
             type={pokemon?.type}
             sprite_url={pokemon?.sprite_url}

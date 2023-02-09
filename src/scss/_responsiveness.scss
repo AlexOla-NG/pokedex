@@ -38,4 +38,15 @@
       }
     }
   }
+
+  .pokemon-details {
+    .details {
+      .container {
+        .card {
+          justify-content: center;
+          gap: 5rem
+        }
+      }
+    }
+  }
 }

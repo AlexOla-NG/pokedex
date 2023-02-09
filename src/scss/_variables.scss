@@ -5,11 +5,14 @@
 // STUB: colors
 $primary-color: hsl(356, 79%, 36%);
 $secondary-color: hsl(0, 0%, 98%);
+$accent-color: hsl(48, 86%, 65%);
 $text-title-color: hsl(0, 0%, 89%);
 $text-body-color: hsl(0, 0%, 54%);
 $header-color: hsl(355, 68%, 48%);
 $background-color: hsl(285, 25%, 97%);
 $white-color: hsl(0, 0%, 100%);
+$focus-inner-color: hsla(210, 52%, 42%, 1.00);
+$focus-outer-color: hsla(200, 72%, 83%, 0.75);
 
 
 // STUB: border radius
@@ -21,7 +24,7 @@ $border-radii: (
 
 // STUB: font size
 $font-sizes: (
-  'fs-h1': 3rem,
+  'fs-h1': 1.875rem,
   'fs-h2': 1.5rem,
   'fs-h3': 1.3rem,
   'fs-p': 1.1rem,

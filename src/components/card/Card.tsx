@@ -1,86 +1,59 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBolt,
-  faFire,
-  faSkullCrossbones,
-  faTint,
-  faLeaf,
-  faUserMinus,
-  faUserPlus,
-  faBug,
-  faMoon,
-  faDragon,
-  faWandMagicSparkles,
-  faDumbbell,
-  faJetFighter,
-  faGhost,
-  faHillRockslide,
-  faIcicles,
-  faBrain,
-  faHouseCrack,
-  faWrench,
-  faPaw,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUserMinus, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "react-loading-skeleton";
 import { ICard } from "./ICard";
+import { myIcons } from "../../shared/utilities";
 
 // TODO: stopped here
-// create pokemonDetails page
+// style card, make it as responsive as pokemondetails container
 
 // TODO: toggle faUserPlus, faUserMinus when pokemon is added/removed from team
 
-const Card = ({ name, type, isOnTeam, sprite_url }: ICard) => {
-  // STUB: reference all dice values from font awesome before babel macro build step
-  const myIcons = {
-    bug: faBug,
-    dark: faMoon,
-    dragon: faDragon,
-    electric: faBolt,
-    fairy: faWandMagicSparkles,
-    fighting: faDumbbell,
-    fire: faFire,
-    flying: faJetFighter,
-    ghost: faGhost,
-    grass: faLeaf,
-    ground: faHouseCrack,
-    ice: faIcicles,
-    normal: faPaw,
-    poison: faSkullCrossbones,
-    psychic: faBrain,
-    rock: faHillRockslide,
-    steel: faWrench,
-    water: faTint,
+const Card = ({ id, name, type, isOnTeam, sprite_url }: ICard) => {
+  const navigate = useNavigate();
+
+  // STUB: navigate to pokemon details page
+  const handleNavigate = () => {
+    navigate(`${id}`);
   };
   return (
-    <motion.div
-      className="pokemon"
-      whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 500 }}
-    >
-      {<img src={sprite_url} alt={name} loading="lazy" /> || <Skeleton />}
-      <div className="pokemon-details">
-        <div className="species-header">
-          <h2>{name || <Skeleton />}</h2>
-          <h3 className="species-title">Species</h3>
+    <div className="container">
+      <motion.div
+        className="pokemon card"
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 500 }}
+      >
+        <div className="card-img">
+          {<img src={sprite_url} alt={name} loading="lazy" /> || <Skeleton />}
         </div>
-        <div className="species">
-          {type?.map((item) => {
-            // STUB: grab name prop nested 2 objects deep
-            const { slot, type } = item;
-            const { name } = type;
-            return (
-              <FontAwesomeIcon
-                key={slot}
-                icon={myIcons[name]}
-                className="active"
-              />
-            );
-          })}
-          <FontAwesomeIcon icon={faUserPlus} beatFade />
+        <div className="pokemon-details">
+          <div className="species-header">
+            <h2 onClick={handleNavigate}>{name || <Skeleton />}</h2>
+
+            <h3 className="species-title">Species</h3>
+          </div>
+          <div className="species">
+            {type?.map((item) => {
+              // STUB: grab name prop nested 2 objects deep
+              const { slot, type } = item;
+              const { name } = type;
+              return (
+                (
+                  <FontAwesomeIcon
+                    key={slot}
+                    icon={myIcons[name]}
+                    className="active"
+                  />
+                ) || <Skeleton />
+              );
+            })}
+            <FontAwesomeIcon icon={faUserPlus} beatFade />
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
