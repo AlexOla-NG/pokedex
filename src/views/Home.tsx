@@ -4,16 +4,18 @@ import Card from "../components/card/Card";
 import { ICard } from "../components/card/ICard";
 import Header from "../components/header/Header";
 import { randomNum } from "../helpers";
+import { IMyTeam } from "../interface";
 
 const API_URL = `https://pokeapi.co/api/v2/pokemon/`;
 
-const Home = () => {
+const Home = ({ handleAddPokemon }: IMyTeam) => {
   const [searchInput, setSearchInput] = useState("");
   const [pokemon, setPokemon] = useState<ICard>();
   const [isLoading, setIsLoading] = useState(false);
 
   const isFirstRender = useRef(true);
 
+  // STUB: this useffect will not run on first render, only when searchInput state has been updated
   useEffect(() => {
     // STUB: return pokemon using searchInput
     const getSearchPokemon = async () => {
@@ -79,6 +81,7 @@ const Home = () => {
             type={pokemon?.type}
             sprite_url={pokemon?.sprite_url}
             isOnTeam={pokemon?.isOnTeam}
+            // handleAddPokemon={handleAddPokemon}
           />
         </div>
       )}

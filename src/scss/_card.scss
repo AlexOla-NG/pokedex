@@ -4,16 +4,22 @@
   display: flex;
   gap: 0.5rem;
   background: $white-color;
-  // border: 1px solid $text-title-color;
-  // height: 168px;
+  border: 1px solid $text-title-color;
   padding: 0.5rem 1rem;
   border-radius: radius(regular);
-  // max-width: 20rem;
+  max-width: 25rem;
 
-  img {
-    // width: 9.375rem;
-    height: auto
+
+  &-img {
+    width: 10rem;
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
   }
+
 
   .pokemon-details {
     display: flex;
@@ -21,13 +27,13 @@
     justify-content: space-evenly;
 
     .species-header {
-      h2 {
+      h1 {
         cursor: pointer;
-        @include resize(fs-h2);
+        @include resize(fs-h1);
       }
 
-      h3 {
-        @include resize(fs-h3);
+      h2 {
+        @include resize(fs-h2);
       }
 
       .species-title {
@@ -39,6 +45,7 @@
     .species {
       color: $text-title-color;
       display: flex;
+      justify-content: center;
       gap: 1rem;
       @include resize(fs-icon);
 
@@ -51,30 +58,4 @@
 
 .pokemon:hover {
   border-color: $primary-color;
-}
-
-
-.container {
-  width: 100%;
-  height: 100%;
-
-  .card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 1.875rem;
-    margin: 20px 10vw 0;
-
-    &-img {
-      min-width: 18.75rem;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        box-shadow: 0 0 0 1.5px $focus-inner-color, 0 0 0 10px $focus-outer-color;
-      }
-    }
-  }
 }

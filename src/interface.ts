@@ -6,3 +6,7 @@ export interface IPokemonDetails extends ICard {
   height?: number;
   weight?: number;
 }
+
+export interface IMyTeam {
+  handleAddPokemon(id?: number): void;
+}

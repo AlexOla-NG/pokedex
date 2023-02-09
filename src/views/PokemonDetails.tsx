@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserMinus, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUserMinus,
+  faUserPlus,
+  faArrowLeftLong,
+} from "@fortawesome/free-solid-svg-icons";
 import HeaderLogo from "../components/header/HeaderLogo";
-import { IPokemonDetails } from "../interface";
+import { IMyTeam, IPokemonDetails } from "../interface";
 import { myIcons } from "../shared/utilities";
 
 const API_URL = `https://pokeapi.co/api/v2/pokemon/`;
 
-const PokemonDetails = () => {
+const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [pokemon, setPokemon] = useState<IPokemonDetails>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -44,6 +49,17 @@ const PokemonDetails = () => {
     getPokemonDetails();
   }, []);
 
+  // STUB: go to previous page
+  const handleReturn = () => {
+    navigate(-1);
+  };
+
+  // STUB: add pokemon to my team, toggle isOnTeam
+  const handleClick = () => {
+    handleAddPokemon(pokemon?.id);
+    // setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
+  };
+
   return (
     <main className="pokemon-details">
       <div className="logo">
@@ -64,6 +80,18 @@ const PokemonDetails = () => {
                 ) || <Skeleton />}
               </div>
               <div className="card-dis">
+                <div className="action-btns">
+                  <FontAwesomeIcon
+                    icon={faArrowLeftLong}
+                    onClick={handleReturn}
+                  />
+                  <FontAwesomeIcon
+                    icon={faUserPlus}
+                    // icon={pokemon.isOnTeam ? faUserMinus : faUserPlus}
+                    onClick={handleClick}
+                    beatFade
+                  />
+                </div>
                 <h1>{pokemon.name || <Skeleton />}</h1>
                 <ul>
                   <li>
@@ -84,22 +112,19 @@ const PokemonDetails = () => {
                     })}
                   </li>
                   <li>
-                    Ability:{" "}
-                    {pokemon.abilities?.map((item) => {
+                    Abilities:{" "}
+                    {pokemon.abilities?.map((item, i) => {
                       // STUB: grab name prop nested 2 objects deep
                       const { ability } = item;
                       const { name } = ability;
-                      return <span>{name}</span> || <Skeleton />;
+                      return <p key={i}>{name}</p> || <Skeleton />;
                     })}
                   </li>
-                  <li>Weight: {pokemon.weight || <Skeleton />}hectograms</li>
-                  <li>Height: {pokemon.height || <Skeleton />}decimeter</li>
+                  <li>Weight: {pokemon.weight || <Skeleton />}hg</li>
+                  <li>Height: {pokemon.height || <Skeleton />}dm</li>
                   <li>
                     Base Experience: {pokemon.base_experience || <Skeleton />}
                     EXP
-                  </li>
-                  <li>
-                    <FontAwesomeIcon icon={faUserPlus} beatFade />
                   </li>
                 </ul>
               </div>

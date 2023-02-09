@@ -35,12 +35,27 @@
 
         &-dis {
           min-width: 18.75rem;
+          @include resize(fs-h1);
+
+
+          .action-btns {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            svg {
+              cursor: pointer;
+            }
+
+            svg:hover {
+              color: $primary-color;
+            }
+          }
 
           h1 {
-            @include resize(fs-h1);
             position: relative;
             overflow: hidden;
-
           }
 
           h1::before {
@@ -64,7 +79,6 @@
           }
 
           ul {
-            @include resize(fs-h1);
             list-style-position: inside;
             list-style-type: none;
             padding: 0.625rem 0;
@@ -72,8 +86,13 @@
             li {
 
               svg,
-              span {
+              p {
                 margin-right: 1rem;
+              }
+
+              p {
+                display: inline-block;
+                text-transform: capitalize;
               }
 
               .active {

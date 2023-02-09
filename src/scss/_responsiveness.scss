@@ -6,17 +6,31 @@
 
 }
 
-@include media-lg {}
-
-@include media-xxl {
+@include media-lg {
   .pokemon {
-    max-width: 22rem;
-
-    &-details {
-      gap: 1rem;
-      justify-content: normal;
+    &-img {
+      width: 15rem;
     }
   }
+
+  .pokemon-details {
+    .details {
+      .container {
+        .card {
+          &-dis {
+            .action-btns {
+              justify-content: normal;
+              gap: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include media-xxl {
 
   .button-search {
     padding: 0.5rem 1rem;

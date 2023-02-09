@@ -14,10 +14,16 @@
   display: flex;
   gap: 0.5rem;
   background: hsl(0deg, 0%, 100%);
+  border: 1px solid hsl(0deg, 0%, 89%);
   padding: 0.5rem 1rem;
   border-radius: 0.125rem;
+  max-width: 25rem;
 }
-.pokemon img {
+.pokemon-img {
+  width: 10rem;
+}
+.pokemon-img img {
+  max-width: 100%;
   height: auto;
 }
 .pokemon .pokemon-details {
@@ -25,21 +31,21 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.pokemon .pokemon-details .species-header h2 {
+.pokemon .pokemon-details .species-header h1 {
   cursor: pointer;
+  font-size: 1.875rem;
+}
+@media only screen and (min-width: 2560px) {
+  .pokemon .pokemon-details .species-header h1 {
+    font-size: 2.375rem;
+  }
+}
+.pokemon .pokemon-details .species-header h2 {
   font-size: 1.5rem;
 }
 @media only screen and (min-width: 2560px) {
   .pokemon .pokemon-details .species-header h2 {
     font-size: 2rem;
-  }
-}
-.pokemon .pokemon-details .species-header h3 {
-  font-size: 1.3rem;
-}
-@media only screen and (min-width: 2560px) {
-  .pokemon .pokemon-details .species-header h3 {
-    font-size: 1.8rem;
   }
 }
 .pokemon .pokemon-details .species-header .species-title {
@@ -48,6 +54,7 @@
 .pokemon .pokemon-details .species {
   color: hsl(0deg, 0%, 89%);
   display: flex;
+  justify-content: center;
   gap: 1rem;
   font-size: 1.2rem;
 }
@@ -62,28 +69,6 @@
 
 .pokemon:hover {
   border-color: hsl(356deg, 79%, 36%);
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-}
-.container .card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 1.875rem;
-  margin: 20px 10vw 0;
-}
-.container .card-img {
-  min-width: 18.75rem;
-}
-.container .card-img img {
-  max-width: 100%;
-  max-height: 100%;
-  box-shadow: 0 0 0 1.5px hsl(210deg, 52%, 42%), 0 0 0 10px hsla(200deg, 72%, 83%, 0.75);
 }
 
 .button-search {
@@ -266,16 +251,28 @@ main .random-pokemon-wrapper {
 }
 .pokemon-details .details .container .card-dis {
   min-width: 18.75rem;
-}
-.pokemon-details .details .container .card-dis h1 {
   font-size: 1.875rem;
-  position: relative;
-  overflow: hidden;
 }
 @media only screen and (min-width: 2560px) {
-  .pokemon-details .details .container .card-dis h1 {
+  .pokemon-details .details .container .card-dis {
     font-size: 2.375rem;
   }
+}
+.pokemon-details .details .container .card-dis .action-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.pokemon-details .details .container .card-dis .action-btns svg {
+  cursor: pointer;
+}
+.pokemon-details .details .container .card-dis .action-btns svg:hover {
+  color: hsl(356deg, 79%, 36%);
+}
+.pokemon-details .details .container .card-dis h1 {
+  position: relative;
+  overflow: hidden;
 }
 .pokemon-details .details .container .card-dis h1::before {
   content: " ";
@@ -296,19 +293,17 @@ main .random-pokemon-wrapper {
   height: 100%;
 }
 .pokemon-details .details .container .card-dis ul {
-  font-size: 1.875rem;
   list-style-position: inside;
   list-style-type: none;
   padding: 0.625rem 0;
 }
-@media only screen and (min-width: 2560px) {
-  .pokemon-details .details .container .card-dis ul {
-    font-size: 2.375rem;
-  }
-}
 .pokemon-details .details .container .card-dis ul li svg,
-.pokemon-details .details .container .card-dis ul li span {
+.pokemon-details .details .container .card-dis ul li p {
   margin-right: 1rem;
+}
+.pokemon-details .details .container .card-dis ul li p {
+  display: inline-block;
+  text-transform: capitalize;
 }
 .pokemon-details .details .container .card-dis ul li .active {
   color: hsl(356deg, 79%, 36%);
@@ -326,14 +321,16 @@ main .random-pokemon-wrapper {
     gap: 1rem;
   }
 }
-@media screen and (min-width: 2560px) {
-  .pokemon {
-    max-width: 22rem;
+@media screen and (min-width: 1024px) {
+  .pokemon-img {
+    width: 15rem;
   }
-  .pokemon-details {
-    gap: 1rem;
+  .pokemon-details .details .container .card-dis .action-btns {
     justify-content: normal;
+    gap: 3rem;
   }
+}
+@media screen and (min-width: 2560px) {
   .button-search {
     padding: 0.5rem 1rem;
     width: 10rem;
