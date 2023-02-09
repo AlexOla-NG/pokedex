@@ -8,7 +8,7 @@ import { IMyTeam } from "../interface";
 
 const API_URL = `https://pokeapi.co/api/v2/pokemon/`;
 
-const Home = ({ handleAddPokemon }: IMyTeam) => {
+const Home = ({ myTeam }: IMyTeam) => {
   const [searchInput, setSearchInput] = useState("");
   const [pokemon, setPokemon] = useState<ICard>();
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +29,7 @@ const Home = ({ handleAddPokemon }: IMyTeam) => {
           name: data.name,
           type: data.types,
           sprite_url: `${data.sprites.other["official-artwork"].front_default}`,
-          isOnTeam: false,
+          isOnTeam: myTeam.includes(data.id) ? true : false,
         });
       } catch (error) {
         console.clear();
@@ -57,7 +57,7 @@ const Home = ({ handleAddPokemon }: IMyTeam) => {
       name: data.name,
       type: data.types,
       sprite_url: `${data.sprites.other["official-artwork"].front_default}`,
-      isOnTeam: false,
+      isOnTeam: myTeam.includes(data.id) ? true : false,
     });
   };
 
@@ -81,7 +81,6 @@ const Home = ({ handleAddPokemon }: IMyTeam) => {
             type={pokemon?.type}
             sprite_url={pokemon?.sprite_url}
             isOnTeam={pokemon?.isOnTeam}
-            // handleAddPokemon={handleAddPokemon}
           />
         </div>
       )}

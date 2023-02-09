@@ -14,7 +14,7 @@ import { myIcons } from "../shared/utilities";
 
 const API_URL = `https://pokeapi.co/api/v2/pokemon/`;
 
-const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
+const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [pokemon, setPokemon] = useState<IPokemonDetails>();
@@ -37,7 +37,7 @@ const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
           weight: data.weight,
           sprite_url: `${data.sprites.other["official-artwork"].front_default}`,
           type: data.types,
-          isOnTeam: false,
+          isOnTeam: myTeam.includes(data.id) ? true : false,
         });
       } catch (error) {
         console.clear();
@@ -54,10 +54,15 @@ const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
     navigate(-1);
   };
 
-  // STUB: add pokemon to my team, toggle isOnTeam
+  // STUB: add/remove pokemon from my team, toggle isOnTeam
+  // if team is full, display alert
   const handleClick = () => {
-    handleAddPokemon(pokemon?.id);
-    // setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
+    if (myTeam.length < 6) {
+      handleToggleTeam(pokemon?.id);
+      setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
+    } else {
+      alert("Team is full. Can't add anymore, boss😅😅😅");
+    }
   };
 
   return (
@@ -86,10 +91,8 @@ const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
                     onClick={handleReturn}
                   />
                   <FontAwesomeIcon
-                    icon={faUserPlus}
-                    // icon={pokemon.isOnTeam ? faUserMinus : faUserPlus}
+                    icon={pokemon.isOnTeam ? faUserMinus : faUserPlus}
                     onClick={handleClick}
-                    beatFade
                   />
                 </div>
                 <h1>{pokemon.name || <Skeleton />}</h1>
@@ -114,7 +117,6 @@ const PokemonDetails = ({ handleAddPokemon }: IMyTeam) => {
                   <li>
                     Abilities:{" "}
                     {pokemon.abilities?.map((item, i) => {
-                      // STUB: grab name prop nested 2 objects deep
                       const { ability } = item;
                       const { name } = ability;
                       return <p key={i}>{name}</p> || <Skeleton />;

@@ -6,16 +6,7 @@ import Skeleton from "react-loading-skeleton";
 import { ICard } from "./ICard";
 import { myIcons } from "../../shared/utilities";
 
-// TODO: toggle faUserPlus, faUserMinus when pokemon is added/removed from team
-
-const Card = ({
-  id,
-  name,
-  type,
-  isOnTeam,
-  sprite_url,
-}: // handleAddPokemon,
-ICard) => {
+const Card = ({ id, name, type, isOnTeam, sprite_url }: ICard) => {
   const navigate = useNavigate();
 
   // STUB: navigate to pokemon details page
@@ -28,13 +19,14 @@ ICard) => {
       className="pokemon"
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 500 }}
+      onClick={handleNavigate}
     >
       <div className="pokemon-img">
         {<img src={sprite_url} alt={name} loading="lazy" /> || <Skeleton />}
       </div>
       <div className="pokemon-details">
         <div className="species-header">
-          <h1 onClick={handleNavigate}>{name || <Skeleton />}</h1>
+          <h1>{name || <Skeleton />}</h1>
 
           <h2 className="species-title">Species</h2>
         </div>
@@ -53,7 +45,7 @@ ICard) => {
               ) || <Skeleton />
             );
           })}
-          <FontAwesomeIcon icon={faUserPlus} beatFade />
+          <FontAwesomeIcon icon={isOnTeam ? faUserMinus : faUserPlus} />
         </div>
       </div>
     </motion.div>

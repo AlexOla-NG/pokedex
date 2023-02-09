@@ -50,6 +50,10 @@
 
             svg:hover {
               color: $primary-color;
+              -webkit-animation: fa-beat-fade 800ms infinite linear;
+              -moz-animation: fa-beat-fade 800ms infinite linear;
+              -o-animation: fa-beat-fade 800ms infinite linear;
+              animation: fa-beat-fade 800ms infinite linear;
             }
           }
 

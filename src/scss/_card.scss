@@ -1,13 +1,14 @@
 .pokemon {
-  font-weight: weight(bold);
-  color: $primary-color;
-  display: flex;
-  gap: 0.5rem;
   background: $white-color;
   border: 1px solid $text-title-color;
-  padding: 0.5rem 1rem;
   border-radius: radius(regular);
+  color: $primary-color;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: weight(bold);
   max-width: 25rem;
+  padding: 0.5rem 1rem;
 
 
   &-img {
@@ -28,7 +29,6 @@
 
     .species-header {
       h1 {
-        cursor: pointer;
         @include resize(fs-h1);
       }
 

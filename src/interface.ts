@@ -8,5 +8,6 @@ export interface IPokemonDetails extends ICard {
 }
 
 export interface IMyTeam {
-  handleAddPokemon(id?: number): void;
+  handleToggleTeam(id?: number): void;
+  myTeam: number[];
 }

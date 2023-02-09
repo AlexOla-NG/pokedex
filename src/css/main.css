@@ -9,15 +9,16 @@
 }
 
 .pokemon {
-  font-weight: bold;
-  color: hsl(356deg, 79%, 36%);
-  display: flex;
-  gap: 0.5rem;
   background: hsl(0deg, 0%, 100%);
   border: 1px solid hsl(0deg, 0%, 89%);
-  padding: 0.5rem 1rem;
   border-radius: 0.125rem;
+  color: hsl(356deg, 79%, 36%);
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
   max-width: 25rem;
+  padding: 0.5rem 1rem;
 }
 .pokemon-img {
   width: 10rem;
@@ -32,7 +33,6 @@
   justify-content: space-evenly;
 }
 .pokemon .pokemon-details .species-header h1 {
-  cursor: pointer;
   font-size: 1.875rem;
 }
 @media only screen and (min-width: 2560px) {
@@ -93,7 +93,7 @@
     font-size: 1.4rem;
   }
 }
-.button-search .button-content img {
+.button-search .button-content svg {
   width: 1.25rem;
   height: auto;
 }
@@ -269,6 +269,7 @@ main .random-pokemon-wrapper {
 }
 .pokemon-details .details .container .card-dis .action-btns svg:hover {
   color: hsl(356deg, 79%, 36%);
+  animation: fa-beat-fade 800ms infinite linear;
 }
 .pokemon-details .details .container .card-dis h1 {
   position: relative;

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ReactComponent as PokeBall } from "../../assets/svg/poke-ball-icon.svg";
 
 const SearchBtn = () => {
   return (
@@ -10,11 +11,7 @@ const SearchBtn = () => {
     >
       <div className="button-content">
         Search
-        <img
-          src="http://www.purarteadesivos.com.br/wp-content/uploads/2017/04/Pok%C3%A9mon-go.png"
-          alt="pokemon ball"
-          loading="lazy"
-        />
+        <PokeBall />
       </div>
     </motion.button>
   );
