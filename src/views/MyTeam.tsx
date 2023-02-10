@@ -40,24 +40,30 @@ const MyTeam = ({ handleToggleTeam, myTeam }: IMyTeam) => {
     })();
   }, []);
 
+  let output;
+
+  if (pokemonList.length > 0) {
+    output = (
+      <>
+        <h1>My Team</h1>
+        <div className="pokemon-list-wrapper">
+          {pokemonList.map((pokemon) => {
+            return <Card key={pokemon.id} {...pokemon} />;
+          })}
+        </div>
+      </>
+    );
+  } else {
+    output = <p>Nothing to see here boss. Add some pokemons to your team...</p>;
+  }
+
   return (
     <main className="my-team">
       <div className="logo">
         <HeaderLogo />
       </div>
 
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <>
-          <h1>My Team</h1>
-          <div className="pokemon-list-wrapper">
-            {pokemonList.map((pokemon) => {
-              return <Card key={pokemon.id} {...pokemon} />;
-            })}
-          </div>
-        </>
-      )}
+      {isLoading ? <div>Loading...</div> : output}
     </main>
   );
 };

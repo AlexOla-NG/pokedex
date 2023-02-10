@@ -18,7 +18,7 @@ This is a frontend UI for displaying data from the pokeapi API (https://pokeapi.
 
 ### Links
 
-- Live Site URL: [Al X](https://alexander-oweka.netlify.app)
+- Live Site URL: [Pokedex](https://pokedex-wheat-beta.vercel.app/)
 
 ## My process
 
@@ -35,11 +35,14 @@ This is a frontend UI for displaying data from the pokeapi API (https://pokeapi.
 
 ### What I learned
 
-With this project, I learnt how to prevent a useEffect from running on the first render.
+With this project, I:
+
+- learnt how to prevent a useEffect from running on the first render.
+- got more practice with conditionally rendering.
 
 ### Continued development
 
-I had some challenge with getting the react-skeleton library to work properly. Maybe it'll feature in my next project.
+I had some challenge with getting the react-skeleton library to work properly. Maybe it'll feature in a future project.
 
 ### Useful resources
 
@@ -47,7 +50,8 @@ I had some challenge with getting the react-skeleton library to work properly. M
 - [How to use setState callback on react hooks](https://stackoverflow.com/a/61612292) - This showed how to use a state value immediately after calling setState. I really liked this pattern and will use it going forward.
 - [Suppress Chrome 'Failed to load resource' messages in console](https://stackoverflow.com/questions/4500741/suppress-chrome-failed-to-load-resource-messages-in-console/30847631#30847631) - This helped to clear the console when error messages were logged after a 404 request. I really liked this pattern and will use it going forward.
 - [FontAwesome Icons Spin only on mouseover?](https://stackoverflow.com/questions/21030259/fontawesome-icons-spin-only-on-mouseover) - This helped us add font awesome animation via css to font awesome icons. I really liked this pattern and will use it going forward.
-- [The Simplest Guide to Using Async/Await with forEach() in JavaScript (with Examples)](https://plainenglish.io/blog/async-await-foreach) - This showed me alternatives to using forEach with async/await. I really liked this pattern and will use it going forward.
+- [The Simplest Guide to Using Async/Await with forEach() in JavaScript (with Examples)](https://plainenglish.io/blog/async-await-foreach) - This showed me alternatives to using forEach loop with async/await. I really liked this pattern and will use it going forward.
+- [How to create disabled state of the font awesome icons?](https://stackoverflow.com/a/50208559) - This showed me how to add disabled state to fontawesome icons using css. I really liked this pattern and will use it going forward.
 
 ## Author
 

@@ -9,14 +9,15 @@ import Navbar from "./components/navigation/Navbar";
 const MAX_TEAM_NUM = 6;
 
 const App = () => {
+  // STUB: get my team details from local storage if it exists; else set to empty array
   const [myTeam, setMyTeam] = useState<number[]>(
-    JSON.parse(localStorage.getItem("my_team") as string)
+    JSON.parse(localStorage.getItem("my_team") as string) || []
   );
 
   const isFirstRender = useRef(true);
 
   // STUB: update localstorage whenever myTeam state value changes
-  // this useeffect won't run on first render
+  // NOTE: this useeffect won't run on first render
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false; // toggle flag after first render/mounting
@@ -25,9 +26,8 @@ const App = () => {
     saveToLocalStorage(); // do something after state has updated
   }, [myTeam]);
 
-  // STUB: add pokemon id to my team if id not found in my team & if max team num has not been reached
-  // if id is in my team, remove pokemon id
-  // if team is full, alert user
+  // STUB: add pokemon id to my team if id not found in my team & if max team num has not been reached;
+  // else, if id is in my team, remove pokemon id
   const handleToggleTeam = (id: number) => {
     if (!myTeam.includes(id) && myTeam.length < MAX_TEAM_NUM) {
       setMyTeam([...myTeam, id]);
@@ -38,7 +38,7 @@ const App = () => {
     }
   };
 
-  // STUB: create function to save my team to localStorage
+  // STUB: save my team to localStorage
   const saveToLocalStorage = () => {
     localStorage.setItem("my_team", JSON.stringify(myTeam));
   };

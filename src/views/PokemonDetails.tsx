@@ -61,8 +61,7 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
     navigate(-1);
   };
 
-  // STUB: add/remove pokemon from my team, toggle isOnTeam
-  // if team is full, display alert
+  // STUB: add/remove pokemon from my team, toggle pokemon isOnTeam prop
   const handleClick = () => {
     handleToggleTeam(pokemon?.id);
     setPokemon({ ...pokemon, isOnTeam: !pokemon?.isOnTeam });
@@ -94,10 +93,13 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
                     onClick={handleReturn}
                   />
                   <FontAwesomeIcon
-                    icon={
-                      pokemon.isOnTeam || myTeam.length === 6
-                        ? faUserMinus
-                        : faUserPlus
+                    // STUB: display remove icon if pokemon is on team; else display add icon
+                    icon={pokemon.isOnTeam ? faUserMinus : faUserPlus}
+                    // STUB: disable button if pokemon is not on team & team is at max capacity
+                    className={
+                      !pokemon.isOnTeam && myTeam.length === 6
+                        ? "disabled-button"
+                        : ""
                     }
                     onClick={handleClick}
                   />
@@ -124,11 +126,11 @@ const PokemonDetails = ({ handleToggleTeam, myTeam }: IMyTeam) => {
                     {pokemon.abilities?.map((item, i) => {
                       const { ability } = item;
                       const { name } = ability;
-                      return <p key={i}>{name}</p>;
+                      return <p key={i}>{name || `???`}</p>;
                     })}
                   </li>
-                  <li>Weight: {pokemon.weight}hg</li>
-                  <li>Height: {pokemon.height}dm</li>
+                  <li>Weight: {pokemon.weight || `???`}hg</li>
+                  <li>Height: {pokemon.height || `???`}dm</li>
                   <li>
                     Base Experience: {pokemon.base_experience || `???`}
                     EXP

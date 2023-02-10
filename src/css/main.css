@@ -246,6 +246,10 @@ main .random-pokemon-wrapper {
   color: hsl(356deg, 79%, 36%);
   animation: fa-beat-fade 800ms infinite linear;
 }
+.pokemon-details .details .container .card-dis .action-btns .disabled-button {
+  opacity: 0.1;
+  pointer-events: none;
+}
 .pokemon-details .details .container .card-dis h1 {
   position: relative;
   overflow: hidden;
@@ -290,7 +294,8 @@ main .random-pokemon-wrapper {
   padding: 1rem 0 2rem;
   max-width: 100%;
 }
-.my-team h1 {
+.my-team h1,
+.my-team p {
   text-align: center;
   margin: 2rem auto;
 }

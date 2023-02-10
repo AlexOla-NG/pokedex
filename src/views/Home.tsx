@@ -15,8 +15,8 @@ const Home = ({ myTeam }: IMyTeam) => {
 
   const isFirstRender = useRef(true);
 
-  // STUB: this useffect will not run on first render,
-  // it'll only run when searchInput state has been updated
+  // STUB: fetch pokemon when searchInput state has been updated
+  // NOTE: this useffect will not run on first render,
   useEffect(() => {
     // STUB: return pokemon using searchInput
     const getSearchPokemon = async () => {
