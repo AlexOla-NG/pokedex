@@ -11,7 +11,7 @@ const Header = ({ getRandomPokemon, getSearchTerm }: IHeader) => {
   };
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    getSearchTerm(input);
+    getSearchTerm(input.toLowerCase().trim());
     setInput("");
   };
   return (
