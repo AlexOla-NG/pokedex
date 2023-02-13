@@ -18,7 +18,7 @@ This is a frontend UI for displaying data from the pokeapi API (https://pokeapi.
 
 ### Links
 
-- Live Site URL: [Pokedex](https://pokedex-wheat-beta.vercel.app/)
+- Live Site URL: [Pokedex](https://pokedex-alexola-ng.vercel.app/)
 
 ## My process
 
@@ -52,6 +52,7 @@ I had some challenge with getting the react-skeleton library to work properly. M
 - [FontAwesome Icons Spin only on mouseover?](https://stackoverflow.com/questions/21030259/fontawesome-icons-spin-only-on-mouseover) - This helped us add font awesome animation via css to font awesome icons. I really liked this pattern and will use it going forward.
 - [The Simplest Guide to Using Async/Await with forEach() in JavaScript (with Examples)](https://plainenglish.io/blog/async-await-foreach) - This showed me alternatives to using forEach loop with async/await. I really liked this pattern and will use it going forward.
 - [How to create disabled state of the font awesome icons?](https://stackoverflow.com/a/50208559) - This showed me how to add disabled state to fontawesome icons using css. I really liked this pattern and will use it going forward.
+- [React.js (Vite) application returns 404 when refreshed on route](https://stackoverflow.com/questions/70870735/react-js-vite-application-returns-404-when-refreshed-on-route/74695785) - This helped troubleshoot a 404 error when refreshing dynamic route page. I really liked this pattern and will use it going forward.
 
 ## Author
 
