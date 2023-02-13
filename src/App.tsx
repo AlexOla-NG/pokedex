@@ -66,6 +66,7 @@ const App = () => {
             <MyTeam myTeam={myTeam} handleToggleTeam={handleToggleTeam} />
           }
         />
+        <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </>
   );
